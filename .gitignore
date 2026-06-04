@@ -9,3 +9,4 @@
 # Editor / misc
 *.log
 node_modules/
+.vercel
