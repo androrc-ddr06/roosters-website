@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roosters Rolling BBQ — Live-Fire BBQ & Taco Catering | Vacaville, CA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Tenacious';
+      src: url('assets/Tenaciou-HeavyOblique.otf') format('opentype');
+      font-weight: 900;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'SegoeUI';
+      src: url('assets/SegUIVar.ttf') format('truetype');
+      font-weight: 100 900;
+    }
+    :root {
+      --brand-red: #D5212A;
+      --brand-red-dark: #b81b23;
+      --brand-offwhite: #F9F6F2;
+      --brand-black: #1C1A1B;
+    }
+    body { font-family: 'SegoeUI', sans-serif; }
+    h1, h2, h3 { font-family: 'Tenacious', serif; }
+    .brand-red { color: var(--brand-red); }
+    .bg-brand-red { background-color: var(--brand-red); }
+    .bg-brand-black { background-color: var(--brand-black); }
+    .bg-brand-offwhite { background-color: var(--brand-offwhite); }
+    .btn-red {
+      background-color: var(--brand-red);
+      transition: background-color 0.2s;
+    }
+    .btn-red:hover { background-color: var(--brand-red-dark); }
+  </style>
+</head>
+<body class="min-h-screen" style="background-color:#fff;">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-black" style="background-color:var(--brand-black);">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html">
+        <img src="assets/logo-logotype-white.png" alt="Roosters Rolling BBQ" style="height:36px;" />
+      </a>
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Home</a>
+        <a href="menu.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Menu</a>
+        <a href="packages.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Packages</a>
+        <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2 rounded-full">Book Now</a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 flex flex-col gap-3" style="background-color:var(--brand-black);">
+      <a href="index.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Home</a>
+      <a href="menu.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Menu</a>
+      <a href="packages.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Packages</a>
+      <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2.5 rounded-full text-center mt-1">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- SPACER for fixed nav -->
+  <div style="height:64px;"></div>
+
+  <!-- HERO -->
+  <section style="background-color:var(--brand-black);" class="relative text-white overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image:url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1600&q=80');"></div>
+    <img src="assets/brand-rooster.png" alt="" aria-hidden="true" class="absolute bottom-0 right-0 w-64 pointer-events-none select-none" style="opacity:0.05;" />
+    <div class="relative max-w-6xl mx-auto px-4 py-28 flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 text-center md:text-left">
+        <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
+          Veteran-Owned · Northern California
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
+          Real BBQ.<br/>
+          <span style="color:var(--brand-red);">Your Event.</span>
+        </h1>
+        <p class="text-xl mb-8" style="color:rgba(255,255,255,0.7);max-width:42rem;">
+          Four generations of food tradition, live-fire BBQ, and taco catering brought directly to you. Vacaville, CA — Serving all of Northern California.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="book.html" class="btn-red text-white font-bold px-8 py-4 rounded-full text-lg text-center">Book Your Event →</a>
+          <a href="packages.html" class="border text-white font-medium px-8 py-4 rounded-full text-lg text-center hover:border-white transition-colors" style="border-color:rgba(255,255,255,0.3);">View Packages</a>
+        </div>
+        <p class="mt-6 text-sm" style="color:rgba(255,255,255,0.4);">📞 (707) 392-3391 · rprado@roostersrollingbbq.com</p>
+      </div>
+      <div class="hidden md:block flex-shrink-0">
+        <img src="assets/logo-watermark.png" alt="Roosters Rolling BBQ" class="drop-shadow-2xl" style="width:256px;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section style="background-color:var(--brand-offwhite);" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="flex justify-center mb-3"><img src="assets/brand-ribs.png" alt="Live-Fire BBQ" class="w-16 h-16 object-contain" /></div>
+          <h3 class="font-bold text-stone-800 mb-1">Live-Fire BBQ</h3>
+          <p class="text-sm text-stone-500">Authentic wood-fired cooking at your event location</p>
+        </div>
+        <div class="text-center">
+          <div class="flex justify-center mb-3"><img src="assets/brand-taco.png" alt="Taco Catering" class="w-16 h-16 object-contain" /></div>
+          <h3 class="font-bold text-stone-800 mb-1">Taco Catering</h3>
+          <p class="text-sm text-stone-500">Over a decade of taco catering experience</p>
+        </div>
+        <div class="text-center">
+          <div class="flex justify-center mb-3"><img src="assets/brand-rooster.png" alt="Veteran-Owned" class="w-16 h-16 object-contain" /></div>
+          <h3 class="font-bold text-stone-800 mb-1">Veteran-Owned</h3>
+          <p class="text-sm text-stone-500">Family tradition backed by four generations in food</p>
+        </div>
+        <div class="text-center">
+          <div class="flex justify-center mb-3"><img src="assets/brand-chili.png" alt="We Come to You" class="w-16 h-16 object-contain" /></div>
+          <h3 class="font-bold text-stone-800 mb-1">We Come to You</h3>
+          <p class="text-sm text-stone-500">Serving all of Northern California</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <section class="overflow-hidden">
+    <div class="flex" style="height:224px;">
+      <div class="flex-1 overflow-hidden"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=80" alt="BBQ spread" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+      <div class="flex-1 overflow-hidden"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80" alt="Pork ribs" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+      <div class="flex-1 overflow-hidden"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&q=80" alt="Tacos" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+      <div class="flex-1 overflow-hidden"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80" alt="Brisket" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+      <div class="flex-1 overflow-hidden"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80" alt="BBQ party" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <!-- A DAY AT A TACO CATERING -->
+  <section style="background-color:var(--brand-black);" class="py-20 relative overflow-hidden text-white">
+    <img src="assets/brand-pattern.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style="opacity:0.04;" />
+    <div class="relative max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
+          Behind the Scenes
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black mb-3">A Day at a Taco Catering</h2>
+        <p style="color:rgba(255,255,255,0.6);" class="max-w-xl mx-auto">From firing up the grill to serving your guests — here's what it looks like when the Roosters crew rolls up to your event.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Phone-style vertical reel -->
+        <div class="flex justify-center">
+          <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10" style="width:300px;aspect-ratio:9/16;background-color:#000;">
+            <video
+              class="w-full h-full object-cover"
+              src="assets/media/taco-catering.mp4"
+              poster="assets/media/taco-catering-poster.jpg"
+              autoplay muted loop playsinline controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- Copy + photo collage -->
+        <div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <img src="assets/media/serving-meat.jpg" alt="Serving fresh-grilled meat" class="w-full h-40 object-cover rounded-xl hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <img src="assets/media/crew-1.jpg" alt="The Roosters crew at work" class="w-full h-40 object-cover rounded-xl hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <img src="assets/media/chicken-tray.jpg" alt="Fresh tray of grilled chicken" class="w-full h-40 object-cover rounded-xl hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <img src="assets/media/catering-1.jpg" alt="Taco catering setup" class="w-full h-40 object-cover rounded-xl hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="space-y-5">
+            <div class="flex gap-4 items-start">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-sm" style="background-color:var(--brand-red);">1</span>
+              <div>
+                <h3 class="font-bold text-lg mb-1">We Roll Up & Set Up</h3>
+                <p class="text-sm" style="color:rgba(255,255,255,0.6);">Our mobile rig arrives at your venue with everything we need — grills, prep stations, and the full crew.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-sm" style="background-color:var(--brand-red);">2</span>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Live-Fire Cooking</h3>
+                <p class="text-sm" style="color:rgba(255,255,255,0.6);">Carne asada, al pastor, and grilled chicken cooked fresh on-site — never pre-made, always sizzling.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-sm" style="background-color:var(--brand-red);">3</span>
+              <div>
+                <h3 class="font-bold text-lg mb-1">We Serve Your Guests</h3>
+                <p class="text-sm" style="color:rgba(255,255,255,0.6);">Hot tacos handed off plate by plate, with all the fixings — guacamole, salsas, and agua fresca.</p>
+              </div>
+            </div>
+          </div>
+          <a href="book.html" class="inline-block btn-red font-bold px-8 py-4 rounded-full text-white mt-8">Book Your Taco Catering →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BBQ PACKAGES -->
+  <section class="py-20 relative overflow-hidden bg-white">
+    <div class="absolute inset-0 pointer-events-none" style="opacity:0.3;background-image:url('assets/brand-pattern.png');background-size:600px;background-repeat:repeat;"></div>
+    <div class="relative max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-black text-stone-800 mb-3">BBQ Packages</h2>
+        <p class="text-stone-500 max-w-xl mx-auto">Everything includes proteins, sides, and the full rolling BBQ experience at your venue.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Package 1 -->
+        <div class="rounded-2xl p-8 text-center border-2 border-stone-200 bg-white shadow-sm hover:-translate-y-1 transition-transform">
+          <h3 class="text-xl font-bold mb-2">Package 1</h3>
+          <p class="text-sm text-stone-500 mb-4">1 Protein + 2 Sides</p>
+          <div class="text-3xl font-black mb-6">$27/person</div>
+          <a href="book.html" class="block btn-red rounded-full py-3 px-6 font-bold text-sm text-white text-center">Book This Package</a>
+        </div>
+        <!-- Package 2 (popular) -->
+        <div class="rounded-2xl p-8 text-center border-2 shadow-xl hover:-translate-y-1 transition-transform text-white" style="background-color:var(--brand-red);border-color:var(--brand-red);">
+          <div class="text-xs font-bold px-3 py-1 rounded-full inline-block mb-4 tracking-wider text-white" style="background-color:var(--brand-black);">MOST POPULAR</div>
+          <h3 class="text-xl font-bold mb-2">Package 2</h3>
+          <p class="text-sm mb-4" style="color:rgba(255,255,255,0.8);">2 Proteins + 2 Sides</p>
+          <div class="text-3xl font-black mb-6">$30/person</div>
+          <a href="book.html" class="block rounded-full py-3 px-6 font-bold text-sm text-white text-center hover:opacity-90 transition-opacity" style="background-color:var(--brand-black);">Book This Package</a>
+        </div>
+        <!-- Package 3 -->
+        <div class="rounded-2xl p-8 text-center border-2 border-stone-200 bg-white shadow-sm hover:-translate-y-1 transition-transform">
+          <h3 class="text-xl font-bold mb-2">Package 3</h3>
+          <p class="text-sm text-stone-500 mb-4">3 Proteins + 2 Sides</p>
+          <div class="text-3xl font-black mb-6">$34/person</div>
+          <a href="book.html" class="block btn-red rounded-full py-3 px-6 font-bold text-sm text-white text-center">Book This Package</a>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="packages.html" class="font-semibold text-sm hover:underline" style="color:var(--brand-red);">View all packages including Taco Bar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="background-color:var(--brand-offwhite);" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-black text-stone-800 mb-2">What Our Clients Say</h2>
+        <p class="text-stone-500 text-sm">BBQ & taco catering across Northern California</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+          <div class="flex gap-0.5 mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-stone-600 text-sm leading-relaxed mb-4">"Ruben and his team catered our company picnic for 150 people. The brisket and tri-tip were incredible — everyone was going back for seconds. Highly recommend!"</p>
+          <p class="font-bold text-stone-800 text-sm">Maria T.</p>
+          <p class="text-stone-400 text-xs">Sacramento, CA</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+          <div class="flex gap-0.5 mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-stone-600 text-sm leading-relaxed mb-4">"We hired Roosters Rolling BBQ for our wedding reception. The taco bar was a huge hit. Fresh, delicious, and the service was outstanding from start to finish."</p>
+          <p class="font-bold text-stone-800 text-sm">James R.</p>
+          <p class="text-stone-400 text-xs">Vacaville, CA</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+          <div class="flex gap-0.5 mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-stone-600 text-sm leading-relaxed mb-4">"Best BBQ catering in the area, hands down. Veteran-owned, super professional, and the food is absolutely amazing. Will be booking again for our next event!"</p>
+          <p class="font-bold text-stone-800 text-sm">Sandra M.</p>
+          <p class="text-stone-400 text-xs">Fairfield, CA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section style="background-color:var(--brand-black);" class="text-white py-16 relative overflow-hidden">
+    <img src="assets/brand-tools-white.png" alt="" aria-hidden="true" class="absolute right-0 bottom-0 w-56 pointer-events-none select-none" style="opacity:0.1;" />
+    <div class="relative max-w-3xl mx-auto px-4 text-center">
+      <img src="assets/brand-stars-white.png" alt="5 stars" class="h-6 mx-auto mb-4" style="filter:brightness(0) saturate(100%) invert(18%) sepia(90%) saturate(700%) hue-rotate(340deg) brightness(95%);" />
+      <h2 class="text-3xl font-black mb-4">Ready to Fire Up Your Event?</h2>
+      <p class="mb-8" style="color:rgba(255,255,255,0.6);">Fill out our quick inquiry form and we'll get back to you within 24-48 hours with a custom quote.</p>
+      <a href="book.html" class="inline-block btn-red font-bold px-10 py-4 rounded-full text-lg text-white">Get a Free Quote →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background-color:var(--brand-black);" class="text-white pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <img src="assets/logo-horizontal-white.png" alt="Roosters Rolling BBQ" style="height:32px;" class="mb-3" />
+        <p class="text-sm" style="color:rgba(255,255,255,0.5);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Quick Links</h4>
+        <div class="flex flex-col gap-2">
+          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Home</a>
+          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Menu</a>
+          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Packages</a>
+          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Book Your Event</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Contact</h4>
+        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.5);">
+          <a href="tel:7073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
+          <a href="mailto:rprado@roostersrollingbbq.com" class="hover:text-white transition-colors">✉️ rprado@roostersrollingbbq.com</a>
+          <span>📍 Vacaville, CA</span>
+          <span>🌎 Serving all of Northern California</span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.3);">
+      © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. · Veteran-Owned Small Business
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden', !open);
+      iconClose.classList.toggle('hidden', open);
+    });
+  </script>
+</body>
+</html>

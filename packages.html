@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catering Packages & Pricing — Roosters Rolling BBQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Tenacious';
+      src: url('assets/Tenaciou-HeavyOblique.otf') format('opentype');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'SegoeUI';
+      src: url('assets/SegUIVar.ttf') format('truetype');
+      font-weight: 100 900;
+    }
+    :root {
+      --brand-red: #D5212A;
+      --brand-red-dark: #b81b23;
+      --brand-offwhite: #F9F6F2;
+      --brand-black: #1C1A1B;
+    }
+    body { font-family: 'SegoeUI', sans-serif; }
+    h1, h2, h3 { font-family: 'Tenacious', serif; }
+    .btn-red { background-color: var(--brand-red); transition: background-color 0.2s; }
+    .btn-red:hover { background-color: var(--brand-red-dark); }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background-color: var(--brand-red); flex-shrink: 0; display: inline-block; }
+  </style>
+</head>
+<body style="background:#fff;">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50" style="background-color:var(--brand-black);">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html"><img src="assets/logo-logotype-white.png" alt="Roosters Rolling BBQ" style="height:36px;" /></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Home</a>
+        <a href="menu.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Menu</a>
+        <a href="packages.html" class="text-sm font-bold" style="color:var(--brand-red);">Packages</a>
+        <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2 rounded-full">Book Now</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 flex flex-col gap-3" style="background-color:var(--brand-black);">
+      <a href="index.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Home</a>
+      <a href="menu.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Menu</a>
+      <a href="packages.html" class="text-sm font-bold py-2 border-b border-white/10" style="color:var(--brand-red);">Packages</a>
+      <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2.5 rounded-full text-center mt-1">Book Now</a>
+    </div>
+  </nav>
+  <div style="height:64px;"></div>
+
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-14">
+      <h1 class="text-5xl font-black mb-4" style="color:var(--brand-black);">Our Packages</h1>
+      <p class="text-lg text-stone-500 max-w-2xl mx-auto">All packages include setup, service, and cleanup. Minimum headcounts may apply. Contact us to discuss your event.</p>
+    </div>
+
+    <!-- BBQ SECTION -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-3xl">🔥</span>
+        <div>
+          <h2 class="text-2xl font-black text-stone-800">Live-Fire BBQ Packages</h2>
+          <p class="text-stone-500 text-sm">Real wood-fired BBQ cooked on-site at your event</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- BBQ Package 1 -->
+        <div class="bg-white rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:#e7e5e4;">
+          <div class="relative overflow-hidden" style="height:176px;">
+            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80" alt="BBQ Package 1" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-stone-800 mb-1">BBQ Package 1</h3>
+            <p class="text-sm text-stone-500 mb-4">Perfect for casual gatherings. Choose your favorite protein and two classic sides.</p>
+            <div class="rounded-xl p-4 mb-4" style="background-color:var(--brand-offwhite);">
+              <p class="text-sm font-semibold text-stone-700">Includes: <span class="text-stone-500 font-normal">1 Protein + 2 Sides</span></p>
+            </div>
+            <div class="flex items-end justify-between">
+              <div><span class="text-3xl font-black text-stone-800">$27</span><span class="text-stone-500 text-sm ml-1">per person</span></div>
+              <a href="book.html" class="btn-red font-bold px-5 py-2.5 rounded-full text-sm text-white">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BBQ Package 2 (popular) -->
+        <div class="bg-white rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:var(--brand-red);">
+          <div class="relative overflow-hidden" style="height:176px;">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80" alt="BBQ Package 2" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);"></div>
+            <div class="absolute top-3 right-3 text-white text-xs font-bold px-3 py-1 rounded-full" style="background-color:var(--brand-red);">MOST POPULAR</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-stone-800 mb-1">BBQ Package 2</h3>
+            <p class="text-sm text-stone-500 mb-4">Our most popular option. More variety with two proteins to satisfy every guest.</p>
+            <div class="rounded-xl p-4 mb-4" style="background-color:var(--brand-offwhite);">
+              <p class="text-sm font-semibold text-stone-700">Includes: <span class="text-stone-500 font-normal">2 Proteins + 2 Sides</span></p>
+            </div>
+            <div class="flex items-end justify-between">
+              <div><span class="text-3xl font-black text-stone-800">$30</span><span class="text-stone-500 text-sm ml-1">per person</span></div>
+              <a href="book.html" class="btn-red font-bold px-5 py-2.5 rounded-full text-sm text-white">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BBQ Package 3 -->
+        <div class="bg-white rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:#e7e5e4;">
+          <div class="relative overflow-hidden" style="height:176px;">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=80" alt="BBQ Package 3" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-stone-800 mb-1">BBQ Package 3</h3>
+            <p class="text-sm text-stone-500 mb-4">The full BBQ experience. Three proteins for a true backyard barbecue spread.</p>
+            <div class="rounded-xl p-4 mb-4" style="background-color:var(--brand-offwhite);">
+              <p class="text-sm font-semibold text-stone-700">Includes: <span class="text-stone-500 font-normal">3 Proteins + 2 Sides</span></p>
+            </div>
+            <div class="flex items-end justify-between">
+              <div><span class="text-3xl font-black text-stone-800">$34</span><span class="text-stone-500 text-sm ml-1">per person</span></div>
+              <a href="book.html" class="btn-red font-bold px-5 py-2.5 rounded-full text-sm text-white">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BBQ Proteins & Sides -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl p-6" style="background-color:var(--brand-offwhite);">
+          <h4 class="font-bold text-stone-700 mb-3">🥩 Protein Options</h4>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Brisket</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Tri-Tip</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Boneless Chicken (Thighs or Breasts)</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Pulled Pork</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Pork Ribs (St. Louis or Baby Back)</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-6" style="background-color:var(--brand-offwhite);">
+          <h4 class="font-bold text-stone-700 mb-3">🥗 Side Options</h4>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Mac & Cheese</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Mashed Potatoes</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Coleslaw</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Grilled Veggies</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Garlic Parmesan Pasta with Asparagus</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Baked Beans</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Caesar Salad</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Garden Salad</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Macaroni Salad</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Potato Salad</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BBQ Add-ons -->
+      <div class="mt-4 rounded-xl p-4 flex flex-wrap gap-4" style="background-color:var(--brand-offwhite);border:1px solid #e5e0d8;">
+        <span class="text-sm font-semibold text-stone-700">BBQ Add-ons:</span>
+        <span class="text-sm text-stone-600">+ 1 Additional Side <strong style="color:var(--brand-red);">+$4/pp</strong></span>
+        <span class="text-sm text-stone-600">+ 1 Additional Protein <strong style="color:var(--brand-red);">+$6/pp</strong></span>
+      </div>
+    </section>
+
+    <!-- TACO SECTION -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-3xl">🌮</span>
+        <div>
+          <h2 class="text-2xl font-black text-stone-800">Taco Bar Packages</h2>
+          <p class="text-stone-500 text-sm">Over a decade of taco catering experience</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <!-- Taco Package 1 -->
+        <div class="bg-white rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:#e7e5e4;">
+          <div class="relative overflow-hidden" style="height:176px;">
+            <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80" alt="Taco Package 1" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-stone-800 mb-1">Taco Package 1</h3>
+            <p class="text-sm text-stone-500 mb-4">Classic taco bar with your choice of three meats and fresh grilled veggies.</p>
+            <div class="rounded-xl p-4 mb-4" style="background-color:var(--brand-offwhite);">
+              <p class="text-sm font-semibold text-stone-700">Includes: <span class="text-stone-500 font-normal">3 Meat Options + Grilled Veggies</span></p>
+            </div>
+            <div class="flex items-end justify-between">
+              <div><span class="text-3xl font-black text-stone-800">$18</span><span class="text-stone-500 text-sm ml-1">per person</span></div>
+              <a href="book.html" class="btn-red font-bold px-5 py-2.5 rounded-full text-sm text-white">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Taco Package 2 (popular) -->
+        <div class="bg-white rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:var(--brand-red);">
+          <div class="relative overflow-hidden" style="height:176px;">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&q=80" alt="Taco Package 2" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);"></div>
+            <div class="absolute top-3 right-3 text-white text-xs font-bold px-3 py-1 rounded-full" style="background-color:var(--brand-red);">MOST POPULAR</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-stone-800 mb-1">Taco Package 2</h3>
+            <p class="text-sm text-stone-500 mb-4">Everything in Package 1 plus cheesy quesadillas to round out the spread.</p>
+            <div class="rounded-xl p-4 mb-4" style="background-color:var(--brand-offwhite);">
+              <p class="text-sm font-semibold text-stone-700">Includes: <span class="text-stone-500 font-normal">3 Meat Options + Grilled Veggies + Quesadillas</span></p>
+            </div>
+            <div class="flex items-end justify-between">
+              <div><span class="text-3xl font-black text-stone-800">$22</span><span class="text-stone-500 text-sm ml-1">per person</span></div>
+              <a href="book.html" class="btn-red font-bold px-5 py-2.5 rounded-full text-sm text-white">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Taco Package 3 -->
+        <div class="bg-white rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:#e7e5e4;">
+          <div class="relative overflow-hidden" style="height:176px;">
+            <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=800&q=80" alt="Taco Package 3" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-stone-800 mb-1">Taco Package 3</h3>
+            <p class="text-sm text-stone-500 mb-4">The complete fiesta package. Includes your choice of Agua Fresca for everyone.</p>
+            <div class="rounded-xl p-4 mb-4" style="background-color:var(--brand-offwhite);">
+              <p class="text-sm font-semibold text-stone-700">Includes: <span class="text-stone-500 font-normal">3 Meats + Grilled Veggies + Quesadillas + Agua Fresca</span></p>
+            </div>
+            <div class="flex items-end justify-between">
+              <div><span class="text-3xl font-black text-stone-800">$26</span><span class="text-stone-500 text-sm ml-1">per person</span></div>
+              <a href="book.html" class="btn-red font-bold px-5 py-2.5 rounded-full text-sm text-white">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-4">
+        <div class="rounded-2xl p-6" style="background-color:var(--brand-offwhite);">
+          <h4 class="font-bold text-stone-700 mb-3">🥩 Taco Meat Options</h4>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Carne Asada</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Grilled Chicken</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Al Pastor (Pork)</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Grilled Veggies</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-6" style="background-color:var(--brand-offwhite);">
+          <h4 class="font-bold text-stone-700 mb-3">🧃 Agua Fresca — $75 each</h4>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Horchata</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Jamaica</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Strawberry</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Cucumber</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Tamarindo</li>
+            <li class="flex items-center gap-2 text-sm text-stone-600"><span class="dot"></span>Piña</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-xl p-4 flex flex-wrap gap-4" style="background-color:var(--brand-offwhite);border:1px solid #e5e0d8;">
+        <span class="text-sm font-semibold text-stone-700">Taco Add-ons:</span>
+        <span class="text-sm text-stone-600">Grilled Veggies <strong style="color:var(--brand-red);">+$3/pp</strong></span>
+        <span class="text-sm text-stone-600">Guacamole <strong style="color:var(--brand-red);">+$5/pp</strong></span>
+        <span class="text-sm text-stone-600">Cheese or Sour Cream <strong style="color:var(--brand-red);">+$3/pp</strong></span>
+      </div>
+    </section>
+
+    <!-- À LA CARTE -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-3xl">🍖</span>
+        <div>
+          <h2 class="text-2xl font-black text-stone-800">À La Carte</h2>
+          <p class="text-stone-500 text-sm">Individual orders — <strong>Minimum order: $250</strong></p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl border-2 border-stone-200 p-6">
+          <h4 class="font-bold text-stone-700 mb-4">🥩 Meats</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Tri Tip</span><strong style="color:var(--brand-red);">$55 each</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Whole Brisket</span><strong style="color:var(--brand-red);">$300</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Rack of Ribs (Pork)</span><strong style="color:var(--brand-red);">$45</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Whole Pork Butt</span><strong style="color:var(--brand-red);">$140</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Boneless Chicken Thighs (10 lbs)</span><strong style="color:var(--brand-red);">$80</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Boneless Chicken Breast (10 lbs)</span><strong style="color:var(--brand-red);">$90</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Smoked Sausage / Hot Links (5 lbs)</span><strong style="color:var(--brand-red);">$50</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl border-2 border-stone-200 p-6">
+          <h4 class="font-bold text-stone-700 mb-4">🥗 Sides</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Half Pan</span><strong style="color:var(--brand-red);">$60</strong></li>
+            <li class="flex items-center justify-between text-sm"><span class="text-stone-600 flex items-center gap-2"><span class="dot"></span>Full Pan</span><strong style="color:var(--brand-red);">$130</strong></li>
+          </ul>
+          <p class="text-xs text-stone-400 mt-6">Sides are available in half or full pan quantities. Contact us for custom orders.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="text-white rounded-3xl p-10 text-center" style="background-color:var(--brand-black);">
+      <h3 class="text-3xl font-black mb-3">Ready to Book?</h3>
+      <p class="mb-6" style="color:rgba(255,255,255,0.6);">Fill out our quick inquiry form and we'll get back to you within 24 hours.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="book.html" class="btn-red font-bold px-8 py-3 rounded-full text-white text-center">Request a Quote →</a>
+        <a href="tel:7073923391" class="border text-white font-medium px-8 py-3 rounded-full text-center hover:border-white transition-colors" style="border-color:rgba(255,255,255,0.3);">Call (707) 392-3391</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background-color:var(--brand-black);" class="text-white pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <img src="assets/logo-horizontal-white.png" alt="Roosters Rolling BBQ" style="height:32px;" class="mb-3" />
+        <p class="text-sm" style="color:rgba(255,255,255,0.5);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Quick Links</h4>
+        <div class="flex flex-col gap-2">
+          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Home</a>
+          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Menu</a>
+          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Packages</a>
+          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Book Your Event</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Contact</h4>
+        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.5);">
+          <a href="tel:7073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
+          <a href="mailto:rprado@roostersrollingbbq.com" class="hover:text-white transition-colors">✉️ rprado@roostersrollingbbq.com</a>
+          <span>📍 Vacaville, CA</span>
+          <span>🌎 Serving all of Northern California</span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.3);">
+      © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. · Veteran-Owned Small Business
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden', !isHidden);
+      iconClose.classList.toggle('hidden', isHidden);
+    });
+  </script>
+</body>
+</html>

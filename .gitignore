@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Original camera media — too large for GitHub (100 MB/file limit).
+# Anchored to the top-level "Media " folder (note the trailing space) only.
+# Web-optimized copies in assets/media/ ARE committed.
+/Media\ /
+
+# Editor / misc
+*.log
+node_modules/
