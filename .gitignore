@@ -10,3 +10,8 @@
 *.log
 node_modules/
 .vercel
+
+# Secrets / local env — never commit (repo is public)
+.env
+.env.*
+!.env.example

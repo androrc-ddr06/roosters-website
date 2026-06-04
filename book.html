@@ -107,6 +107,23 @@
         </div>
       </div>
 
+      <!-- Honeypot: hidden from real users; bots tend to fill it. -->
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+        <label>Company<input id="company" name="company" type="text" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <!-- SMS/email consent (required for A2P 10DLC compliance) -->
+      <div class="flex items-start gap-3">
+        <input id="consent" type="checkbox" class="mt-1 h-4 w-4 flex-shrink-0 accent-red-600" />
+        <label for="consent" class="text-xs text-stone-500 leading-relaxed">
+          By checking this box, I agree to receive SMS text messages and emails from Roosters Rolling BBQ
+          regarding my catering inquiry. Msg &amp; data rates may apply. Msg frequency varies.
+          Reply STOP to opt out, HELP for help. Consent is not a condition of purchase. See our
+          <a href="privacy.html" class="underline" style="color:var(--brand-red);">Privacy Policy</a> and
+          <a href="terms.html" class="underline" style="color:var(--brand-red);">Terms</a>.
+        </label>
+      </div>
+
       <button type="submit" id="submitBtn"
         class="w-full btn-red font-bold py-3.5 rounded-full text-white text-lg">
         Submit Inquiry →
@@ -143,7 +160,10 @@
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.3);">
-      © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. · Veteran-Owned Small Business
+      © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. ·
+      <a href="privacy.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Privacy Policy</a> ·
+      <a href="terms.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Terms</a> ·
+      Veteran-Owned Small Business
     </div>
   </footer>
 
@@ -178,12 +198,17 @@
       const date = document.getElementById('event_date').value;
       const guests = document.getElementById('guest_count').value;
       const budget = document.getElementById('budget').value;
+      const consentEl = document.getElementById('consent');
+      const honeypot = document.getElementById('company').value;
 
       if (!name) return showError('Please enter your full name.');
       if (!phone) return showError('Please enter your phone number.');
       if (!email) return showError('Please enter your email address.');
       if (!date) return showError('Please enter your event date.');
       if (!guests) return showError('Please enter an approximate guest count.');
+      if (!consentEl.checked) return showError('Please agree to be contacted so we can respond to your inquiry.');
+
+      const consentText = document.querySelector('label[for="consent"]').textContent.trim().replace(/\s+/g, ' ');
 
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
@@ -203,6 +228,11 @@
             event_date: date,
             guest_count: parseInt(guests),
             budget: budget ? parseFloat(budget) : null,
+            consent: true,
+            consent_text: consentText,
+            consent_timestamp: new Date().toISOString(),
+            company: honeypot,
+            source_url: window.location.href,
           }),
         });
 

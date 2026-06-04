@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Roosters Rolling BBQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Tenacious';
+      src: url('assets/Tenaciou-HeavyOblique.otf') format('opentype');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'SegoeUI';
+      src: url('assets/SegUIVar.ttf') format('truetype');
+      font-weight: 100 900;
+    }
+    :root {
+      --brand-red: #D5212A;
+      --brand-red-dark: #b81b23;
+      --brand-offwhite: #F9F6F2;
+      --brand-black: #1C1A1B;
+    }
+    body { font-family: 'SegoeUI', sans-serif; }
+    h1, h2, h3 { font-family: 'Tenacious', serif; }
+    .btn-red { background-color: var(--brand-red); transition: background-color 0.2s; }
+    .btn-red:hover { background-color: var(--brand-red-dark); }
+    .prose h2 { color: var(--brand-black); font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p, .prose li { color: #57534e; line-height: 1.7; margin-bottom: 0.75rem; }
+    .prose ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+    .prose a { color: var(--brand-red); text-decoration: underline; }
+    .prose strong { color: var(--brand-black); }
+  </style>
+</head>
+<body style="background:#fff;">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50" style="background-color:var(--brand-black);">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html"><img src="assets/logo-logotype-white.png" alt="Roosters Rolling BBQ" style="height:36px;" /></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Home</a>
+        <a href="menu.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Menu</a>
+        <a href="packages.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Packages</a>
+        <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2 rounded-full">Book Now</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 flex flex-col gap-3" style="background-color:var(--brand-black);">
+      <a href="index.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Home</a>
+      <a href="menu.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Menu</a>
+      <a href="packages.html" class="text-white text-sm font-medium py-2 border-b border-white/10">Packages</a>
+      <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2.5 rounded-full text-center mt-1">Book Now</a>
+    </div>
+  </nav>
+  <div style="height:64px;"></div>
+
+  <!-- CONTENT -->
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-black mb-2" style="color:var(--brand-black);">Privacy Policy</h1>
+    <p class="text-sm text-stone-400 mb-8">Last updated: <span id="updated"></span></p>
+
+    <div class="prose">
+      <p>Roosters Rolling BBQ ("we," "us," or "our") respects your privacy. This Privacy Policy explains what information we collect when you use our website or contact us, how we use it, and the choices you have. By using our site or submitting an inquiry, you agree to this policy.</p>
+
+      <h2>Information We Collect</h2>
+      <p>When you submit our booking/inquiry form, we collect the information you provide, which may include:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Phone number</li>
+        <li>Email address</li>
+        <li>Event details (event date, approximate guest count, and budget, if provided)</li>
+      </ul>
+      <p>We do not collect this information unless you voluntarily provide it.</p>
+
+      <h2>How We Use Your Information</h2>
+      <ul>
+        <li>To respond to your catering inquiry and provide quotes</li>
+        <li>To communicate with you about your event by phone, email, and text message (SMS)</li>
+        <li>To schedule, confirm, and coordinate catering services</li>
+        <li>To maintain our customer records</li>
+      </ul>
+
+      <h2>SMS / Text Messaging</h2>
+      <p>By providing your phone number and checking the consent box on our form, you agree to receive SMS text messages from Roosters Rolling BBQ related to your catering inquiry, including responses, scheduling, quotes, and confirmations.</p>
+      <ul>
+        <li><strong>Message frequency varies</strong> based on your inquiry and event.</li>
+        <li><strong>Message and data rates may apply</strong> from your mobile carrier.</li>
+        <li>Reply <strong>STOP</strong> at any time to opt out of text messages. Reply <strong>HELP</strong> for assistance.</li>
+        <li>Consent to receive text messages is <strong>not a condition</strong> of purchasing any goods or services.</li>
+        <li>Carriers are not liable for delayed or undelivered messages.</li>
+      </ul>
+      <p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> Text messaging originator opt-in data and consent are not shared with any third parties.</p>
+
+      <h2>How We Share Information</h2>
+      <p>We use Go High Level (LeadConnector) as our customer relationship management (CRM) platform to manage inquiries and communications. Your information is processed through this service solely to provide our services to you. <strong>We do not sell your personal information.</strong> We do not share your information with third parties except as needed to operate our business (such as our CRM provider) or as required by law.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain your information for as long as needed to respond to your inquiry, provide our services, and maintain our business records, unless you request deletion.</p>
+
+      <h2>Your Choices</h2>
+      <ul>
+        <li>You can opt out of text messages at any time by replying STOP.</li>
+        <li>You can unsubscribe from emails using the unsubscribe link, or by contacting us.</li>
+        <li>You can request that we update or delete your information by contacting us at the details below.</li>
+      </ul>
+
+      <h2>Children's Privacy</h2>
+      <p>Our website and services are not directed to children under 13, and we do not knowingly collect information from them.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date.</p>
+
+      <h2>Contact Us</h2>
+      <p>
+        Roosters Rolling BBQ<br />
+        Vacaville, CA — Serving all of Northern California<br />
+        Phone: <a href="tel:7073923391">(707) 392-3391</a><br />
+        Email: <a href="mailto:rprado@roostersrollingbbq.com">rprado@roostersrollingbbq.com</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background-color:var(--brand-black);" class="text-white pt-12 pb-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <img src="assets/logo-horizontal-white.png" alt="Roosters Rolling BBQ" style="height:32px;" class="mb-3" />
+        <p class="text-sm" style="color:rgba(255,255,255,0.5);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Quick Links</h4>
+        <div class="flex flex-col gap-2">
+          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Home</a>
+          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Menu</a>
+          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Packages</a>
+          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Book Your Event</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Contact</h4>
+        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.5);">
+          <a href="tel:7073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
+          <a href="mailto:rprado@roostersrollingbbq.com" class="hover:text-white transition-colors">✉️ rprado@roostersrollingbbq.com</a>
+          <span>📍 Vacaville, CA</span>
+          <span>🌎 Serving all of Northern California</span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.3);">
+      © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. ·
+      <a href="privacy.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Privacy Policy</a> ·
+      <a href="terms.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Terms</a> ·
+      Veteran-Owned Small Business
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden', !isHidden);
+      iconClose.classList.toggle('hidden', isHidden);
+    });
+  </script>
+</body>
+</html>
