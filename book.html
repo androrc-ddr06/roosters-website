@@ -124,6 +124,16 @@
         </label>
       </div>
 
+      <!-- Optional marketing consent (separate & NOT required — A2P best practice for promotional SMS) -->
+      <div class="flex items-start gap-3">
+        <input id="marketing_consent" type="checkbox" class="mt-1 h-4 w-4 flex-shrink-0 accent-red-600" />
+        <label for="marketing_consent" class="text-xs text-stone-500 leading-relaxed">
+          <span class="font-semibold">Optional:</span> I'd also like to receive occasional offers, promotions, and
+          updates from Roosters Rolling BBQ via SMS. Msg &amp; data rates may apply. Msg frequency varies.
+          Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.
+        </label>
+      </div>
+
       <button type="submit" id="submitBtn"
         class="w-full btn-red font-bold py-3.5 rounded-full text-white text-lg">
         Submit Inquiry →
@@ -199,6 +209,7 @@
       const guests = document.getElementById('guest_count').value;
       const budget = document.getElementById('budget').value;
       const consentEl = document.getElementById('consent');
+      const marketingEl = document.getElementById('marketing_consent');
       const honeypot = document.getElementById('company').value;
 
       if (!name) return showError('Please enter your full name.');
@@ -209,6 +220,7 @@
       if (!consentEl.checked) return showError('Please agree to be contacted so we can respond to your inquiry.');
 
       const consentText = document.querySelector('label[for="consent"]').textContent.trim().replace(/\s+/g, ' ');
+      const marketingConsentText = document.querySelector('label[for="marketing_consent"]').textContent.trim().replace(/\s+/g, ' ');
 
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
@@ -231,6 +243,8 @@
             consent: true,
             consent_text: consentText,
             consent_timestamp: new Date().toISOString(),
+            marketing_consent: marketingEl.checked,
+            marketing_consent_text: marketingEl.checked ? marketingConsentText : '',
             company: honeypot,
             source_url: window.location.href,
           }),

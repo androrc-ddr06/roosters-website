@@ -29,6 +29,8 @@ module.exports = async (req, res) => {
     consent,
     consent_text = '',
     consent_timestamp = '',
+    marketing_consent = false,
+    marketing_consent_text = '',
     company = '',      // honeypot — should always be empty for real users
     source_url = '',
   } = body;
@@ -67,6 +69,8 @@ module.exports = async (req, res) => {
     consent: true,
     consent_text,
     consent_timestamp,
+    marketing_consent: marketing_consent === true,
+    marketing_consent_text,
     source_url,
     submitted_at: new Date().toISOString(),
   };
