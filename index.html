@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roosters Rolling BBQ — Live-Fire BBQ & Taco Catering | Vacaville, CA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preload" href="assets/Tenaciou-HeavyOblique.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     @font-face {
       font-family: 'Tenacious';
-      src: url('assets/Tenaciou-HeavyOblique.otf') format('opentype');
+      src: url('assets/Tenaciou-HeavyOblique.woff2') format('woff2');
+      font-display: swap;
       font-weight: 900;
       font-style: italic;
     }
     @font-face {
       font-family: 'SegoeUI';
-      src: url('assets/SegUIVar.ttf') format('truetype');
+      src: url('assets/SegUIVar.woff2') format('woff2');
+      font-display: swap;
       font-weight: 100 900;
     }
     :root {
@@ -154,10 +157,11 @@
         <div class="flex justify-center">
           <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10" style="width:300px;aspect-ratio:9/16;background-color:#000;">
             <video
+              id="reelVideo"
               class="w-full h-full object-cover"
               src="assets/media/taco-catering.mp4"
               poster="assets/media/taco-catering-poster.jpg"
-              autoplay muted loop playsinline controls
+              muted loop playsinline controls preload="none"
             ></video>
           </div>
         </div>
@@ -376,6 +380,19 @@
           active = next;
         }, 5500);
       }
+    })();
+
+    // Play the reel video only when it scrolls into view (defers the ~4MB download)
+    (function () {
+      const v = document.getElementById('reelVideo');
+      if (!v || !('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { v.play().catch(function () {}); }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.25 });
+      io.observe(v);
     })();
   </script>
 </body>
