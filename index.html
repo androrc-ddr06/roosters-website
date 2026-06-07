@@ -75,29 +75,26 @@
 
   <!-- HERO -->
   <section style="background-color:var(--brand-black);" class="relative text-white overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image:url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1600&q=80');"></div>
-    <img src="assets/brand-rooster.png" alt="" aria-hidden="true" class="absolute bottom-0 right-0 w-64 pointer-events-none select-none" style="opacity:0.05;" />
-    <div class="relative max-w-6xl mx-auto px-4 py-28 flex flex-col md:flex-row items-center gap-12">
-      <div class="flex-1 text-center md:text-left">
-        <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
-          Veteran-Owned · Northern California
-        </div>
-        <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
-          Real BBQ.<br/>
-          <span style="color:var(--brand-red);">Your Event.</span>
-        </h1>
-        <p class="text-xl mb-8" style="color:rgba(255,255,255,0.7);max-width:42rem;">
-          Four generations of food tradition, live-fire BBQ, and taco catering brought directly to you. Vacaville, CA — Serving all of Northern California.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <a href="book.html" class="btn-red text-white font-bold px-8 py-4 rounded-full text-lg text-center">Book Your Event →</a>
-          <a href="packages.html" class="border text-white font-medium px-8 py-4 rounded-full text-lg text-center hover:border-white transition-colors" style="border-color:rgba(255,255,255,0.3);">View Packages</a>
-        </div>
-        <p class="mt-6 text-sm" style="color:rgba(255,255,255,0.4);">📞 (707) 392-3391 · rprado@roostersrollingbbq.com</p>
+    <!-- Shuffling background slideshow (real catering photos) -->
+    <div id="heroBg" class="absolute inset-0"></div>
+    <!-- Dark overlay for text legibility -->
+    <div class="absolute inset-0" style="background-color:rgba(28,26,27,0.68);"></div>
+    <div class="relative max-w-3xl mx-auto px-4 py-32 text-center">
+      <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
+        Veteran-Owned · Northern California
       </div>
-      <div class="hidden md:block flex-shrink-0">
-        <img src="assets/logo-watermark.png" alt="Roosters Rolling BBQ" class="drop-shadow-2xl" style="width:256px;" />
+      <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
+        Real BBQ.<br/>
+        <span style="color:var(--brand-red);">Your Event.</span>
+      </h1>
+      <p class="text-xl mb-8 mx-auto" style="color:rgba(255,255,255,0.85);max-width:42rem;">
+        Four generations of food tradition, live-fire BBQ, and taco catering brought directly to you. Vacaville, CA — Serving all of Northern California.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="book.html" class="btn-red text-white font-bold px-8 py-4 rounded-full text-lg text-center">Book Your Event →</a>
+        <a href="packages.html" class="border text-white font-medium px-8 py-4 rounded-full text-lg text-center hover:border-white transition-colors" style="border-color:rgba(255,255,255,0.3);">View Packages</a>
       </div>
+      <p class="mt-6 text-sm" style="color:rgba(255,255,255,0.55);">📞 (707) 392-3391 · rprado@roostersrollingbbq.com</p>
     </div>
   </section>
 
@@ -329,6 +326,48 @@
       iconOpen.classList.toggle('hidden', !open);
       iconClose.classList.toggle('hidden', open);
     });
+
+    // Hero background — shuffled crossfading slideshow of real catering photos
+    (function () {
+      const imgs = [
+        'assets/media/serving-meat.jpg',
+        'assets/media/catering-1.jpg',
+        'assets/media/chicken-tray.jpg',
+        'assets/media/crew-1.jpg',
+        'assets/media/catering-2.jpg',
+        'assets/media/crew-2.jpg'
+      ];
+      // Fisher–Yates shuffle so the order differs each visit
+      for (let i = imgs.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+      }
+      const bg = document.getElementById('heroBg');
+      if (!bg) return;
+      const layers = [document.createElement('div'), document.createElement('div')];
+      layers.forEach((l) => {
+        l.style.position = 'absolute';
+        l.style.inset = '0';
+        l.style.backgroundSize = 'cover';
+        l.style.backgroundPosition = 'center';
+        l.style.transition = 'opacity 1.2s ease-in-out';
+        l.style.opacity = '0';
+        bg.appendChild(l);
+      });
+      let idx = 0, active = 0;
+      layers[0].style.backgroundImage = "url('" + imgs[0] + "')";
+      layers[0].style.opacity = '1';
+      if (imgs.length > 1) {
+        setInterval(function () {
+          idx = (idx + 1) % imgs.length;
+          const next = (active + 1) % 2;
+          layers[next].style.backgroundImage = "url('" + imgs[idx] + "')";
+          layers[next].style.opacity = '1';
+          layers[active].style.opacity = '0';
+          active = next;
+        }, 4500);
+      }
+    })();
   </script>
 </body>
 </html>
