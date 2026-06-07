@@ -79,7 +79,7 @@
     <div id="heroBg" class="absolute inset-0"></div>
     <!-- Dark overlay for text legibility -->
     <div class="absolute inset-0" style="background-color:rgba(28,26,27,0.68);"></div>
-    <div class="relative max-w-3xl mx-auto px-4 py-32 text-center">
+    <div class="relative max-w-3xl mx-auto px-4 py-28 md:py-40 text-center">
       <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
         Veteran-Owned · Northern California
       </div>
@@ -350,22 +350,31 @@
         l.style.inset = '0';
         l.style.backgroundSize = 'cover';
         l.style.backgroundPosition = 'center';
-        l.style.transition = 'opacity 1.2s ease-in-out';
+        l.style.transformOrigin = 'center';
         l.style.opacity = '0';
+        l.style.willChange = 'opacity, transform';
         bg.appendChild(l);
       });
+      // Fade a layer in while slowly zooming out (Ken Burns effect)
+      function show(layer, src) {
+        layer.style.transition = 'none';
+        layer.style.transform = 'scale(1.1)';
+        layer.style.backgroundImage = "url('" + src + "')";
+        void layer.offsetWidth; // reflow so the reset lands before animating
+        layer.style.transition = 'opacity 1.4s ease-in-out, transform 7s ease-out';
+        layer.style.opacity = '1';
+        layer.style.transform = 'scale(1)';
+      }
       let idx = 0, active = 0;
-      layers[0].style.backgroundImage = "url('" + imgs[0] + "')";
-      layers[0].style.opacity = '1';
+      show(layers[0], imgs[0]);
       if (imgs.length > 1) {
         setInterval(function () {
           idx = (idx + 1) % imgs.length;
           const next = (active + 1) % 2;
-          layers[next].style.backgroundImage = "url('" + imgs[idx] + "')";
-          layers[next].style.opacity = '1';
+          show(layers[next], imgs[idx]);
           layers[active].style.opacity = '0';
           active = next;
-        }, 4500);
+        }, 5500);
       }
     })();
   </script>
