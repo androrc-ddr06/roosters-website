@@ -115,14 +115,14 @@
         <label>Company<input id="company" name="company" type="text" tabindex="-1" autocomplete="off" /></label>
       </div>
 
-      <!-- SMS/email consent (required for A2P 10DLC compliance) -->
+      <!-- SMS consent — OPTIONAL opt-in. A2P 10DLC requires consent to NOT be a condition of using the service. -->
       <div class="flex items-start gap-3">
         <input id="consent" type="checkbox" class="mt-1 h-4 w-4 flex-shrink-0 accent-red-600" />
         <label for="consent" class="text-sm text-stone-600 leading-relaxed">
-          By checking this box, I agree to receive transactional SMS text messages and emails from Roosters Rolling BBQ
-          about my catering inquiry — including responses, scheduling, quotes, alerts, and confirmations.
+          <span class="font-semibold">Optional:</span> I agree to receive SMS text messages from Roosters Rolling BBQ
+          about my catering inquiry — responses, scheduling, quotes, and confirmations.
           Message and data rates may apply. Message frequency may vary.
-          Reply STOP to unsubscribe, reply HELP for help. Consent is not a condition of purchase. See our
+          Reply STOP to unsubscribe, reply HELP for help. Consent is not required to submit this inquiry or to receive a response — we can also reach you by phone or email. See our
           <a href="privacy.html" class="underline" style="color:var(--brand-red);">Privacy Policy</a> and
           <a href="terms.html" class="underline" style="color:var(--brand-red);">Terms</a>.
         </label>
@@ -228,7 +228,7 @@
       if (!email) return showError('Please enter your email address.');
       if (!date) return showError('Please enter your event date.');
       if (!guests) return showError('Please enter an approximate guest count.');
-      if (!consentEl.checked) return showError('Please agree to be contacted so we can respond to your inquiry.');
+      // SMS consent is intentionally OPTIONAL — the form must submit whether or not it's checked (A2P 10DLC compliance).
 
       const consentText = document.querySelector('label[for="consent"]').textContent.trim().replace(/\s+/g, ' ');
       const marketingConsentText = document.querySelector('label[for="marketing_consent"]').textContent.trim().replace(/\s+/g, ' ');
@@ -251,9 +251,9 @@
             event_date: date,
             guest_count: parseInt(guests),
             budget: budget ? parseFloat(budget) : null,
-            consent: true,
-            consent_text: consentText,
-            consent_timestamp: new Date().toISOString(),
+            consent: consentEl.checked,
+            consent_text: consentEl.checked ? consentText : '',
+            consent_timestamp: consentEl.checked ? new Date().toISOString() : '',
             marketing_consent: marketingEl.checked,
             marketing_consent_text: marketingEl.checked ? marketingConsentText : '',
             company: honeypot,

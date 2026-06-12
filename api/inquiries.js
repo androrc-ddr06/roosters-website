@@ -47,7 +47,9 @@ module.exports = async (req, res) => {
   if (!client_email || !String(client_email).trim()) missing.push('email');
   if (!event_date) missing.push('event date');
   if (guest_count === undefined || guest_count === null || guest_count === '') missing.push('guest count');
-  if (consent !== true) missing.push('consent');
+  // NOTE: SMS consent is intentionally NOT required. A2P 10DLC compliance requires that opting in to
+  // texts is optional — a customer can submit an inquiry without it (we still reply by phone/email).
+  // The `consent` boolean is forwarded so the GHL workflow only sends SMS to those who opted in.
 
   if (missing.length) {
     return res.status(400).json({ error: `Missing or invalid: ${missing.join(', ')}.` });
@@ -66,7 +68,7 @@ module.exports = async (req, res) => {
     event_date,
     guest_count: parseInt(guest_count, 10),
     budget: budget !== null && budget !== '' ? parseFloat(budget) : null,
-    consent: true,
+    consent: consent === true,
     consent_text,
     consent_timestamp,
     marketing_consent: marketing_consent === true,
