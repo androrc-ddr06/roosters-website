@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Roosters Rolling BBQ</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#D5212A" />
+  <link rel="icon" type="image/png" href="/assets/brand-rooster.png" />
+  <link rel="apple-touch-icon" href="/assets/brand-rooster.png" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="preload" href="/assets/Tenaciou-HeavyOblique.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Tenacious';
+      src: url('/assets/Tenaciou-HeavyOblique.woff2') format('woff2');
+      font-display: swap;
+      font-weight: 900;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'SegoeUI';
+      src: url('/assets/SegUIVar.woff2') format('woff2');
+      font-display: swap;
+      font-weight: 100 900;
+    }
+    :root {
+      --brand-red: #D5212A;
+      --brand-red-dark: #b81b23;
+      --brand-offwhite: #F9F6F2;
+      --brand-black: #1C1A1B;
+    }
+    body { font-family: 'SegoeUI', sans-serif; }
+    h1, h2, h3 { font-family: 'Tenacious', serif; }
+    .btn-red { background-color: var(--brand-red); transition: background-color 0.2s; }
+    .btn-red:hover { background-color: var(--brand-red-dark); }
+    a:focus-visible, button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; border-radius: 4px; }
+  </style>
+</head>
+<body style="background-color:var(--brand-black);" class="min-h-screen text-white flex flex-col">
+  <main class="flex-1 flex items-center justify-center px-4 py-20 text-center">
+    <div class="max-w-lg mx-auto">
+      <img src="/assets/brand-rooster.png" alt="Roosters Rolling BBQ" class="h-20 mx-auto mb-6" />
+      <p class="text-7xl md:text-8xl font-black mb-2" style="color:var(--brand-red);">404</p>
+      <h1 class="text-3xl md:text-4xl font-black mb-4">This page flew the coop</h1>
+      <p class="mb-8" style="color:rgba(255,255,255,0.65);">The page you're looking for doesn't exist or has moved. But the BBQ is still on — let's get you back on track.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="btn-red font-bold px-8 py-3.5 rounded-full text-white text-center">Back to Home</a>
+        <a href="/book.html" class="border font-medium px-8 py-3.5 rounded-full text-center hover:border-white transition-colors" style="border-color:rgba(255,255,255,0.6);">Book Your Event →</a>
+      </div>
+      <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm" style="color:rgba(255,255,255,0.7);">
+        <a href="/menu.html" class="hover:text-white transition-colors">Menu</a>
+        <a href="/packages.html" class="hover:text-white transition-colors">Packages</a>
+        <a href="tel:+17073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

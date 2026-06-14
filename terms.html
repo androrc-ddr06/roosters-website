@@ -4,6 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service — Roosters Rolling BBQ</title>
+  <meta name="description" content="Terms of Service for Roosters Rolling BBQ catering, including booking conditions and SMS/messaging terms." />
+  <link rel="canonical" href="https://roostersrollingbbq.com/terms.html" />
+  <meta name="theme-color" content="#D5212A" />
+  <link rel="icon" type="image/png" href="/assets/brand-rooster.png" />
+  <link rel="apple-touch-icon" href="/assets/brand-rooster.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Roosters Rolling BBQ" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Terms of Service — Roosters Rolling BBQ" />
+  <meta property="og:url" content="https://roostersrollingbbq.com/terms.html" />
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID to activate -->
+  <script>
+    window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    if (window.GA_MEASUREMENT_ID && !/X{4}/.test(window.GA_MEASUREMENT_ID)) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', window.GA_MEASUREMENT_ID);
+    }
+  </script>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="preload" href="assets/Tenaciou-HeavyOblique.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -34,9 +58,14 @@
     .prose ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
     .prose a { color: var(--brand-red); text-decoration: underline; }
     .prose strong { color: var(--brand-black); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--brand-red); outline-offset: 2px; border-radius: 4px; }
+    .skip-link { position: absolute; left: 8px; top: -48px; z-index: 100; background: var(--brand-red); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 8px; font-weight: 700; transition: top 0.15s; }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body style="background:#fff;">
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- NAVBAR -->
   <nav class="fixed top-0 left-0 right-0 z-50" style="background-color:var(--brand-black);">
@@ -48,7 +77,7 @@
         <a href="packages.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Packages</a>
         <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2 rounded-full">Book Now</a>
       </div>
-      <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+      <button id="menuBtn" class="md:hidden text-white" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
@@ -60,7 +89,7 @@
       <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2.5 rounded-full text-center mt-1">Book Now</a>
     </div>
   </nav>
-  <div style="height:64px;"></div>
+  <div id="main" tabindex="-1" style="height:64px;"></div>
 
   <!-- CONTENT -->
   <div class="max-w-3xl mx-auto px-4 py-16">
@@ -114,7 +143,7 @@
       <p>
         Roosters Rolling BBQ<br />
         Vacaville, CA — Serving all of Northern California<br />
-        Phone: <a href="tel:7073923391">(707) 392-3391</a><br />
+        Phone: <a href="tel:+17073923391">(707) 392-3391</a><br />
         Email: <a href="mailto:rprado@roostersrollingbbq.com">rprado@roostersrollingbbq.com</a>
       </p>
     </div>
@@ -125,31 +154,40 @@
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8">
       <div>
         <img src="assets/logo-horizontal-white.png" alt="Roosters Rolling BBQ" style="height:32px;" class="mb-3" />
-        <p class="text-sm" style="color:rgba(255,255,255,0.5);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+        <p class="text-sm" style="color:rgba(255,255,255,0.75);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+        <!-- TODO (owner): replace the Instagram and Facebook URLs with your real profile links. -->
+        <div class="flex gap-3 mt-4">
+          <a href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE" target="_blank" rel="noopener" aria-label="Roosters Rolling BBQ on Instagram" class="transition-opacity hover:opacity-100" style="color:rgba(255,255,255,0.8);">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener" aria-label="Roosters Rolling BBQ on Facebook" class="transition-opacity hover:opacity-100" style="color:rgba(255,255,255,0.8);">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Quick Links</h4>
         <div class="flex flex-col gap-2">
-          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Home</a>
-          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Menu</a>
-          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Packages</a>
-          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Book Your Event</a>
+          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Home</a>
+          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Menu</a>
+          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Packages</a>
+          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Book Your Event</a>
         </div>
       </div>
       <div>
         <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Contact</h4>
-        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.5);">
-          <a href="tel:7073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
+        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.75);">
+          <a href="tel:+17073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
           <a href="mailto:rprado@roostersrollingbbq.com" class="hover:text-white transition-colors">✉️ rprado@roostersrollingbbq.com</a>
           <span>📍 Vacaville, CA</span>
           <span>🌎 Serving all of Northern California</span>
         </div>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.3);">
+    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.6);">
       © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. ·
-      <a href="privacy.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Privacy Policy</a> ·
-      <a href="terms.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Terms</a> ·
+      <a href="privacy.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Privacy Policy</a> ·
+      <a href="terms.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Terms</a> ·
       Veteran-Owned Small Business
     </div>
   </footer>

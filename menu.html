@@ -4,6 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BBQ & Taco Menu — Roosters Rolling BBQ</title>
+  <meta name="description" content="Explore the Roosters Rolling BBQ catering menu — smoked brisket, tri-tip, carne asada and al pastor street tacos, homestyle sides, and agua frescas, all cooked live at your event." />
+  <link rel="canonical" href="https://roostersrollingbbq.com/menu.html" />
+  <meta name="theme-color" content="#D5212A" />
+  <link rel="icon" type="image/png" href="/assets/brand-rooster.png" />
+  <link rel="apple-touch-icon" href="/assets/brand-rooster.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Roosters Rolling BBQ" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="BBQ & Taco Catering Menu — Roosters Rolling BBQ" />
+  <meta property="og:description" content="Smoked brisket, tri-tip, carne asada and al pastor tacos, homestyle sides, and agua frescas — all cooked live at your event." />
+  <meta property="og:url" content="https://roostersrollingbbq.com/menu.html" />
+  <meta property="og:image" content="https://roostersrollingbbq.com/assets/media/catering-1.jpg" />
+  <meta property="og:image:width" content="1400" />
+  <meta property="og:image:height" content="933" />
+  <meta property="og:image:alt" content="Roosters Rolling BBQ BBQ and taco bar spread at a catered event" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BBQ & Taco Catering Menu — Roosters Rolling BBQ" />
+  <meta name="twitter:description" content="Smoked brisket, tri-tip, carne asada and al pastor tacos, sides, and agua frescas — cooked live at your event." />
+  <meta name="twitter:image" content="https://roostersrollingbbq.com/assets/media/catering-1.jpg" />
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID to activate -->
+  <script>
+    window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    if (window.GA_MEASUREMENT_ID && !/X{4}/.test(window.GA_MEASUREMENT_ID)) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', window.GA_MEASUREMENT_ID);
+    }
+  </script>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="preload" href="assets/Tenaciou-HeavyOblique.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -30,9 +63,14 @@
     .btn-red { background-color: var(--brand-red); transition: background-color 0.2s; }
     .btn-red:hover { background-color: var(--brand-red-dark); }
     .tab-btn { transition: background-color 0.2s, color 0.2s; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--brand-red); outline-offset: 2px; border-radius: 4px; }
+    .skip-link { position: absolute; left: 8px; top: -48px; z-index: 100; background: var(--brand-red); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 8px; font-weight: 700; transition: top 0.15s; }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body style="background:#fff;">
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- NAVBAR -->
   <nav class="fixed top-0 left-0 right-0 z-50" style="background-color:var(--brand-black);">
@@ -44,7 +82,7 @@
         <a href="packages.html" class="text-white text-sm font-medium hover:text-red-400 transition-colors">Packages</a>
         <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2 rounded-full">Book Now</a>
       </div>
-      <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+      <button id="menuBtn" class="md:hidden text-white" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
@@ -56,7 +94,7 @@
       <a href="book.html" class="btn-red text-white text-sm font-bold px-5 py-2.5 rounded-full text-center mt-1">Book Now</a>
     </div>
   </nav>
-  <div style="height:64px;"></div>
+  <div id="main" tabindex="-1" style="height:64px;"></div>
 
   <!-- PAGE CONTENT -->
   <div class="max-w-6xl mx-auto px-4 py-16">
@@ -66,16 +104,16 @@
     </div>
 
     <!-- TABS -->
-    <div class="flex flex-wrap gap-2 justify-center mb-10">
-      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold" data-tab="bbqProteins" style="background-color:var(--brand-red);color:white;">🥩 BBQ Proteins</button>
-      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="tacoMeats">🌮 Taco Meats</button>
-      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="sides">🥗 Sides</button>
-      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="tacoAddons">➕ Taco Add-ons</button>
-      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="drinks">🧃 Agua Fresca</button>
+    <div class="flex flex-wrap gap-2 justify-center mb-10" role="tablist" aria-label="Menu categories">
+      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold" data-tab="bbqProteins" role="tab" id="tab-bbqProteins" aria-controls="bbqProteins" aria-selected="true" tabindex="0" style="background-color:var(--brand-red);color:white;">🥩 BBQ Proteins</button>
+      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="tacoMeats" role="tab" id="tab-tacoMeats" aria-controls="tacoMeats" aria-selected="false" tabindex="-1">🌮 Taco Meats</button>
+      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="sides" role="tab" id="tab-sides" aria-controls="sides" aria-selected="false" tabindex="-1">🥗 Sides</button>
+      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="tacoAddons" role="tab" id="tab-tacoAddons" aria-controls="tacoAddons" aria-selected="false" tabindex="-1">➕ Taco Add-ons</button>
+      <button class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600" data-tab="drinks" role="tab" id="tab-drinks" aria-controls="drinks" aria-selected="false" tabindex="-1">🧃 Agua Fresca</button>
     </div>
 
     <!-- TAB PANELS -->
-    <div id="bbqProteins" class="tab-panel grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+    <div id="bbqProteins" class="tab-panel grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" role="tabpanel" aria-labelledby="tab-bbqProteins" tabindex="0">
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Brisket</h3><p class="text-stone-500 text-sm">Slow-smoked Texas-style beef brisket, tender and juicy</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Tri-Tip</h3><p class="text-stone-500 text-sm">California classic, reverse-seared over live fire</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Boneless Chicken</h3><p class="text-stone-500 text-sm">Thighs or breasts, marinated and grilled to perfection</p></div>
@@ -83,14 +121,14 @@
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Pork Ribs</h3><p class="text-stone-500 text-sm">St. Louis or Baby Back — sauced and caramelized on the grill</p></div>
     </div>
 
-    <div id="tacoMeats" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+    <div id="tacoMeats" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" role="tabpanel" aria-labelledby="tab-tacoMeats" tabindex="0">
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Carne Asada</h3><p class="text-stone-500 text-sm">Grilled and sliced seasoned beef — a crowd favorite</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Grilled Chicken</h3><p class="text-stone-500 text-sm">Marinated and grilled, sliced fresh to order</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Al Pastor (Pork)</h3><p class="text-stone-500 text-sm">Achiote-spiced pork with a sweet char</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Grilled Veggies</h3><p class="text-stone-500 text-sm">Seasonal vegetables, grilled with olive oil and herbs</p></div>
     </div>
 
-    <div id="sides" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+    <div id="sides" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" role="tabpanel" aria-labelledby="tab-sides" tabindex="0">
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Mac & Cheese</h3><p class="text-stone-500 text-sm">Creamy homestyle macaroni and cheese</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Mashed Potatoes</h3><p class="text-stone-500 text-sm">Buttery, smooth mashed potatoes</p></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Coleslaw</h3><p class="text-stone-500 text-sm">Classic creamy coleslaw with a touch of vinegar</p></div>
@@ -103,14 +141,14 @@
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Potato Salad</h3><p class="text-stone-500 text-sm">Classic potato salad with mustard and herbs</p></div>
     </div>
 
-    <div id="tacoAddons" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+    <div id="tacoAddons" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" role="tabpanel" aria-labelledby="tab-tacoAddons" tabindex="0">
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Grilled Veggies</h3><p class="text-stone-500 text-sm">Add grilled veggies to your taco bar</p><span class="font-bold text-sm" style="color:var(--brand-red);">+$3/pp</span></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Guacamole</h3><p class="text-stone-500 text-sm">Fresh housemade guacamole</p><span class="font-bold text-sm" style="color:var(--brand-red);">+$5/pp</span></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Cheese</h3><p class="text-stone-500 text-sm">Shredded cheese blend</p><span class="font-bold text-sm" style="color:var(--brand-red);">+$3/pp</span></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Sour Cream</h3><p class="text-stone-500 text-sm">Fresh sour cream</p><span class="font-bold text-sm" style="color:var(--brand-red);">+$3/pp</span></div>
     </div>
 
-    <div id="drinks" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+    <div id="drinks" class="tab-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" role="tabpanel" aria-labelledby="tab-drinks" tabindex="0">
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Horchata</h3><p class="text-stone-500 text-sm">Classic creamy rice and cinnamon drink</p><span class="font-bold text-sm" style="color:var(--brand-red);">$75/jug</span></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Jamaica</h3><p class="text-stone-500 text-sm">Hibiscus flower iced tea — refreshing and tart</p><span class="font-bold text-sm" style="color:var(--brand-red);">$75/jug</span></div>
       <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"><h3 class="font-bold text-stone-800 text-lg">Strawberry</h3><p class="text-stone-500 text-sm">Fresh strawberry agua fresca</p><span class="font-bold text-sm" style="color:var(--brand-red);">$75/jug</span></div>
@@ -132,31 +170,40 @@
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8">
       <div>
         <img src="assets/logo-horizontal-white.png" alt="Roosters Rolling BBQ" style="height:32px;" class="mb-3" />
-        <p class="text-sm" style="color:rgba(255,255,255,0.5);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+        <p class="text-sm" style="color:rgba(255,255,255,0.75);">Veteran-owned BBQ and taco catering. Four generations of food tradition, serving all of Northern California.</p>
+        <!-- TODO (owner): replace the Instagram and Facebook URLs with your real profile links. -->
+        <div class="flex gap-3 mt-4">
+          <a href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE" target="_blank" rel="noopener" aria-label="Roosters Rolling BBQ on Instagram" class="transition-opacity hover:opacity-100" style="color:rgba(255,255,255,0.8);">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener" aria-label="Roosters Rolling BBQ on Facebook" class="transition-opacity hover:opacity-100" style="color:rgba(255,255,255,0.8);">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Quick Links</h4>
         <div class="flex flex-col gap-2">
-          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Home</a>
-          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Menu</a>
-          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Packages</a>
-          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.5);">Book Your Event</a>
+          <a href="index.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Home</a>
+          <a href="menu.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Menu</a>
+          <a href="packages.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Packages</a>
+          <a href="book.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Book Your Event</a>
         </div>
       </div>
       <div>
         <h4 class="font-bold text-sm mb-3 tracking-wider uppercase">Contact</h4>
-        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.5);">
-          <a href="tel:7073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
+        <div class="flex flex-col gap-2 text-sm" style="color:rgba(255,255,255,0.75);">
+          <a href="tel:+17073923391" class="hover:text-white transition-colors">📞 (707) 392-3391</a>
           <a href="mailto:rprado@roostersrollingbbq.com" class="hover:text-white transition-colors">✉️ rprado@roostersrollingbbq.com</a>
           <span>📍 Vacaville, CA</span>
           <span>🌎 Serving all of Northern California</span>
         </div>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.3);">
+    <div class="max-w-6xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs" style="color:rgba(255,255,255,0.6);">
       © <span id="yr"></span> Roosters Rolling BBQ. All rights reserved. ·
-      <a href="privacy.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Privacy Policy</a> ·
-      <a href="terms.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.45);">Terms</a> ·
+      <a href="privacy.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Privacy Policy</a> ·
+      <a href="terms.html" class="hover:text-white transition-colors" style="color:rgba(255,255,255,0.75);">Terms</a> ·
       Veteran-Owned Small Business
     </div>
   </footer>
@@ -173,24 +220,97 @@
       const isHidden = mobileMenu.classList.toggle('hidden');
       iconOpen.classList.toggle('hidden', !isHidden);
       iconClose.classList.toggle('hidden', isHidden);
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
     });
 
-    // Tab switching
-    const tabs = document.querySelectorAll('.tab-btn');
+    // Tab switching (accessible: aria-selected, roving tabindex, arrow-key nav)
+    const tabs = Array.from(document.querySelectorAll('.tab-btn'));
     const panels = document.querySelectorAll('.tab-panel');
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.tab;
-        tabs.forEach(b => {
-          b.style.backgroundColor = '#f3f4f6';
-          b.style.color = '#4b5563';
-        });
-        btn.style.backgroundColor = 'var(--brand-red)';
-        btn.style.color = 'white';
-        panels.forEach(p => p.classList.add('hidden'));
-        document.getElementById(target).classList.remove('hidden');
+    function activateTab(btn, setFocus) {
+      tabs.forEach(b => {
+        const selected = b === btn;
+        b.setAttribute('aria-selected', String(selected));
+        b.tabIndex = selected ? 0 : -1;
+        b.style.backgroundColor = selected ? 'var(--brand-red)' : '#f3f4f6';
+        b.style.color = selected ? 'white' : '#4b5563';
+      });
+      panels.forEach(p => p.classList.add('hidden'));
+      document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      if (setFocus) btn.focus();
+    }
+    tabs.forEach((btn, i) => {
+      btn.addEventListener('click', () => activateTab(btn, false));
+      btn.addEventListener('keydown', (e) => {
+        let next = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') next = tabs[0];
+        else if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); activateTab(next, true); }
       });
     });
+  </script>
+
+  <!-- Structured data: catering menu, linked to the business entity defined on the home page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "Roosters Rolling BBQ Catering Menu",
+    "url": "https://roostersrollingbbq.com/menu.html",
+    "provider": { "@type": "Caterer", "@id": "https://roostersrollingbbq.com/#business" },
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "BBQ Proteins",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Brisket", "description": "Slow-smoked Texas-style beef brisket, tender and juicy" },
+          { "@type": "MenuItem", "name": "Tri-Tip", "description": "California classic, reverse-seared over live fire" },
+          { "@type": "MenuItem", "name": "Boneless Chicken", "description": "Thighs or breasts, marinated and grilled to perfection" },
+          { "@type": "MenuItem", "name": "Pulled Pork", "description": "Low & slow smoked pork shoulder, fall-apart tender" },
+          { "@type": "MenuItem", "name": "Pork Ribs", "description": "St. Louis or Baby Back, sauced and caramelized on the grill" }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Taco Meats",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Carne Asada", "description": "Grilled and sliced seasoned beef" },
+          { "@type": "MenuItem", "name": "Grilled Chicken", "description": "Marinated and grilled, sliced fresh to order" },
+          { "@type": "MenuItem", "name": "Al Pastor (Pork)", "description": "Achiote-spiced pork with a sweet char" },
+          { "@type": "MenuItem", "name": "Grilled Veggies", "description": "Seasonal vegetables grilled with olive oil and herbs" }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Sides",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Mac & Cheese" },
+          { "@type": "MenuItem", "name": "Mashed Potatoes" },
+          { "@type": "MenuItem", "name": "Coleslaw" },
+          { "@type": "MenuItem", "name": "Grilled Veggies" },
+          { "@type": "MenuItem", "name": "Garlic Parmesan Pasta" },
+          { "@type": "MenuItem", "name": "Baked Beans" },
+          { "@type": "MenuItem", "name": "Caesar Salad" },
+          { "@type": "MenuItem", "name": "Garden Salad" },
+          { "@type": "MenuItem", "name": "Macaroni Salad" },
+          { "@type": "MenuItem", "name": "Potato Salad" }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Agua Fresca",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Horchata", "offers": { "@type": "Offer", "price": "75.00", "priceCurrency": "USD" } },
+          { "@type": "MenuItem", "name": "Jamaica", "offers": { "@type": "Offer", "price": "75.00", "priceCurrency": "USD" } },
+          { "@type": "MenuItem", "name": "Strawberry", "offers": { "@type": "Offer", "price": "75.00", "priceCurrency": "USD" } },
+          { "@type": "MenuItem", "name": "Cucumber", "offers": { "@type": "Offer", "price": "75.00", "priceCurrency": "USD" } },
+          { "@type": "MenuItem", "name": "Tamarindo", "offers": { "@type": "Offer", "price": "75.00", "priceCurrency": "USD" } },
+          { "@type": "MenuItem", "name": "Piña", "offers": { "@type": "Offer", "price": "75.00", "priceCurrency": "USD" } }
+        ]
+      }
+    ]
+  }
   </script>
 </body>
 </html>
