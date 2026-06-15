@@ -153,35 +153,12 @@
         <label>Company<input id="company" name="company" type="text" tabindex="-1" autocomplete="off" /></label>
       </div>
 
-      <!-- SMS consent — OPTIONAL opt-in. A2P 10DLC requires consent to NOT be a condition of using the service. -->
-      <div class="flex items-start gap-3">
-        <input id="consent" type="checkbox" class="mt-1 h-4 w-4 flex-shrink-0 accent-red-600" />
-        <label for="consent" class="text-sm text-stone-600 leading-relaxed">
-          <span class="font-semibold">Optional:</span> I agree to receive recurring SMS text messages from Roosters Rolling BBQ
-          about my catering inquiry — responses, scheduling, quotes, and confirmations.
-          Message frequency varies. Message and data rates may apply.
-          Reply STOP to unsubscribe, HELP for help. Consent is not a condition of purchase and is not required to submit this inquiry or to receive a response — we can also reach you by phone or email. See our
-          <a href="privacy.html" class="underline" style="color:var(--brand-red);">Privacy Policy</a> and
-          <a href="terms.html" class="underline" style="color:var(--brand-red);">Terms</a>.
-        </label>
-      </div>
-
-      <!-- Optional marketing consent (separate & NOT required — A2P best practice for promotional SMS) -->
-      <div class="flex items-start gap-3">
-        <input id="marketing_consent" type="checkbox" class="mt-1 h-4 w-4 flex-shrink-0 accent-red-600" />
-        <label for="marketing_consent" class="text-sm text-stone-600 leading-relaxed">
-          <span class="font-semibold">Optional:</span> I'd also like to receive promotional and marketing SMS text messages from
-          Roosters Rolling BBQ, such as special offers and event promotions.
-          Message and data rates may apply. Message frequency may vary.
-          Reply STOP to unsubscribe, reply HELP for help. Consent is not a condition of purchase.
-        </label>
-      </div>
-
-      <!-- Point-of-opt-in disclosure for A2P 10DLC / CTIA carrier review (mirrors the Privacy Policy). -->
-      <p class="text-xs text-stone-500 leading-relaxed border-l-2 pl-3" style="border-color:var(--brand-red);">
-        Your phone number and SMS consent are used only by Roosters Rolling BBQ to contact you about your event.
-        We never sell or share your mobile information or text-messaging opt-in with third parties or affiliates for
-        marketing purposes. Message and data rates may apply; reply STOP to opt out or HELP for help at any time.
+      <!-- SMS opt-in is handled exclusively via the website chat widget (single canonical opt-in for A2P 10DLC). This form does not collect SMS consent. -->
+      <p class="text-xs text-stone-500 leading-relaxed">
+        We'll use your phone number and email only to respond to this catering inquiry — we never sell or share
+        your information with third parties. See our
+        <a href="privacy.html" class="underline" style="color:var(--brand-red);">Privacy Policy</a>.
+        Prefer text updates? Tap the chat button in the corner to opt in to SMS.
       </p>
 
       <button type="submit" id="submitBtn"
@@ -274,8 +251,6 @@
       const date = document.getElementById('event_date').value;
       const guests = document.getElementById('guest_count').value;
       const budget = document.getElementById('budget').value;
-      const consentEl = document.getElementById('consent');
-      const marketingEl = document.getElementById('marketing_consent');
       const honeypot = document.getElementById('company').value;
 
       if (!name) return showError('Please enter your full name.');
@@ -283,10 +258,6 @@
       if (!email) return showError('Please enter your email address.');
       if (!date) return showError('Please enter your event date.');
       if (!guests) return showError('Please enter an approximate guest count.');
-      // SMS consent is intentionally OPTIONAL — the form must submit whether or not it's checked (A2P 10DLC compliance).
-
-      const consentText = document.querySelector('label[for="consent"]').textContent.trim().replace(/\s+/g, ' ');
-      const marketingConsentText = document.querySelector('label[for="marketing_consent"]').textContent.trim().replace(/\s+/g, ' ');
 
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
@@ -306,11 +277,6 @@
             event_date: date,
             guest_count: parseInt(guests),
             budget: budget ? parseFloat(budget) : null,
-            consent: consentEl.checked,
-            consent_text: consentEl.checked ? consentText : '',
-            consent_timestamp: consentEl.checked ? new Date().toISOString() : '',
-            marketing_consent: marketingEl.checked,
-            marketing_consent_text: marketingEl.checked ? marketingConsentText : '',
             company: honeypot,
             source_url: window.location.href,
           }),
@@ -346,5 +312,7 @@
       el.classList.remove('hidden');
     }
   </script>
+  <!-- LeadConnector chat widget - single canonical SMS opt-in (A2P 10DLC) -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a224644e53da97e71bd548a" data-source="WEB_USER"></script>
 </body>
 </html>
