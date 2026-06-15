@@ -98,76 +98,32 @@
 
   <!-- FORM -->
   <div class="max-w-xl mx-auto px-4 py-16">
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-black mb-2" style="color:var(--brand-black);">Book Your Event</h1>
-      <p class="text-stone-500">Fill out the form below and we'll get back to you within 24-48 hours.</p>
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-black mb-3" style="color:var(--brand-black);">Let's Plan Your Event</h1>
+      <p class="text-stone-500 leading-relaxed">Tell us your date, headcount, and what you're craving and we'll send a custom BBQ or taco catering quote, usually within 24–48 hours.</p>
     </div>
 
-    <!-- Success message (hidden by default) -->
-    <div id="successMsg" class="hidden bg-green-50 border border-green-200 text-green-800 rounded-2xl p-6 text-center mb-6">
-      <div class="text-4xl mb-3">🎉</div>
-      <h3 class="text-xl font-bold mb-2">We got your inquiry!</h3>
-      <p class="text-sm">Ruben will reach out within 24-48 hours to confirm availability and discuss your event.</p>
+    <div class="bg-white rounded-2xl border border-stone-200 p-8 shadow-sm text-center space-y-6">
+      <div class="text-5xl" aria-hidden="true">🔥</div>
+      <div>
+        <h2 class="text-xl font-bold mb-2" style="color:var(--brand-black);">Start a chat to get your quote</h2>
+        <p class="text-sm text-stone-600 leading-relaxed">
+          Tap the <span class="font-semibold" style="color:var(--brand-red);">chat button</span> in the bottom-right
+          corner and send Ruben your event details — date, headcount, and what you're craving. It's the fastest way
+          to reach us, and it's where you can opt in to text updates if you'd like them.
+        </p>
+      </div>
+
+      <div class="border-t border-stone-100 pt-6">
+        <p class="text-sm text-stone-500 mb-3">Prefer to call or text?</p>
+        <a href="tel:+17073923391" class="block w-full btn-red font-bold py-3.5 rounded-full text-white text-lg">
+          Call or Text (707) 392-3391
+        </a>
+        <a href="mailto:rprado@roostersrollingbbq.com" class="inline-block mt-4 text-sm underline" style="color:var(--brand-red);">
+          rprado@roostersrollingbbq.com
+        </a>
+      </div>
     </div>
-
-    <!-- Error message (hidden by default) -->
-    <div id="errorMsg" class="hidden bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm mb-4"></div>
-
-    <form id="bookForm" class="bg-white rounded-2xl border border-stone-200 p-8 shadow-sm space-y-5">
-      <div>
-        <label class="block text-sm font-semibold text-stone-700 mb-1">Full Name *</label>
-        <input id="client_name" type="text" placeholder="John Doe"
-          class="w-full border border-stone-300 rounded-xl px-4 py-3 text-stone-800" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-stone-700 mb-1">Phone Number *</label>
-        <input id="client_phone" type="tel" placeholder="(707) 555-1234"
-          class="w-full border border-stone-300 rounded-xl px-4 py-3 text-stone-800" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-stone-700 mb-1">Email Address *</label>
-        <input id="client_email" type="email" placeholder="john@example.com"
-          class="w-full border border-stone-300 rounded-xl px-4 py-3 text-stone-800" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-stone-700 mb-1">Event Date *</label>
-        <input id="event_date" type="date"
-          class="w-full border border-stone-300 rounded-xl px-4 py-3 text-stone-800" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-stone-700 mb-1">Approximate Number of Guests *</label>
-        <input id="guest_count" type="number" placeholder="e.g. 75" min="1"
-          class="w-full border border-stone-300 rounded-xl px-4 py-3 text-stone-800" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-stone-700 mb-1">Budget <span class="text-stone-400 font-normal">(optional)</span></label>
-        <div class="relative">
-          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">$</span>
-          <input id="budget" type="number" placeholder="0.00"
-            class="w-full border border-stone-300 rounded-xl pl-8 pr-4 py-3 text-stone-800" />
-        </div>
-      </div>
-
-      <!-- Honeypot: hidden from real users; bots tend to fill it. -->
-      <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
-        <label>Company<input id="company" name="company" type="text" tabindex="-1" autocomplete="off" /></label>
-      </div>
-
-      <!-- SMS opt-in is handled exclusively via the website chat widget (single canonical opt-in for A2P 10DLC). This form does not collect SMS consent. -->
-      <p class="text-xs text-stone-500 leading-relaxed">
-        We'll use your phone number and email only to respond to this catering inquiry — we never sell or share
-        your information with third parties. See our
-        <a href="privacy.html" class="underline" style="color:var(--brand-red);">Privacy Policy</a>.
-        Prefer text updates? Tap the chat button in the corner to opt in to SMS.
-      </p>
-
-      <button type="submit" id="submitBtn"
-        class="w-full btn-red font-bold py-3.5 rounded-full text-white text-lg">
-        Submit Inquiry →
-      </button>
-
-      <p class="text-xs text-stone-400 text-center">We'll review your inquiry and respond within 24-48 hours with availability and a quote.</p>
-    </form>
 
     <p class="text-xs text-stone-400 text-center mt-4">
       <a href="privacy.html" class="underline hover:text-stone-600 transition-colors">Privacy Policy</a>
@@ -222,9 +178,6 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Set min date to today
-    document.getElementById('event_date').min = new Date().toISOString().split('T')[0];
-
     // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -237,80 +190,6 @@
       menuBtn.setAttribute('aria-expanded', String(!isHidden));
     });
 
-    // Form submission
-    document.getElementById('bookForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const errorMsg = document.getElementById('errorMsg');
-      const successMsg = document.getElementById('successMsg');
-      const submitBtn = document.getElementById('submitBtn');
-      errorMsg.classList.add('hidden');
-
-      const name = document.getElementById('client_name').value.trim();
-      const phone = document.getElementById('client_phone').value.trim();
-      const email = document.getElementById('client_email').value.trim();
-      const date = document.getElementById('event_date').value;
-      const guests = document.getElementById('guest_count').value;
-      const budget = document.getElementById('budget').value;
-      const honeypot = document.getElementById('company').value;
-
-      if (!name) return showError('Please enter your full name.');
-      if (!phone) return showError('Please enter your phone number.');
-      if (!email) return showError('Please enter your email address.');
-      if (!date) return showError('Please enter your event date.');
-      if (!guests) return showError('Please enter an approximate guest count.');
-
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
-
-      try {
-        // NOTE for hosting: Update this URL to your backend API once it's deployed.
-        // Example: 'https://your-backend.railway.app/api/inquiries'
-        const API_URL = '/api/inquiries';
-
-        const res = await fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            client_name: name,
-            client_phone: phone,
-            client_email: email,
-            event_date: date,
-            guest_count: parseInt(guests),
-            budget: budget ? parseFloat(budget) : null,
-            company: honeypot,
-            source_url: window.location.href,
-          }),
-        });
-
-        if (!res.ok) {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || 'Something went wrong.');
-        }
-
-        document.getElementById('bookForm').classList.add('hidden');
-        successMsg.classList.remove('hidden');
-        successMsg.focus();
-        // Track the booking inquiry as a conversion in GA4 (no-op until GA is configured).
-        if (window.gtag) {
-          gtag('event', 'generate_lead', {
-            event_category: 'booking',
-            event_label: 'booking_form',
-            currency: 'USD',
-            value: budget ? parseFloat(budget) : 0,
-          });
-        }
-      } catch (err) {
-        showError(err.message || 'Could not submit. Please call us at (707) 392-3391.');
-        submitBtn.textContent = 'Submit Inquiry →';
-        submitBtn.disabled = false;
-      }
-    });
-
-    function showError(msg) {
-      const el = document.getElementById('errorMsg');
-      el.textContent = msg;
-      el.classList.remove('hidden');
-    }
   </script>
   <!-- LeadConnector chat widget - single canonical SMS opt-in (A2P 10DLC) -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a224644e53da97e71bd548a" data-source="WEB_USER"></script>
