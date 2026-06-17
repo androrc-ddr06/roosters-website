@@ -24,19 +24,17 @@
   <meta name="twitter:title" content="Roosters Rolling BBQ — Live-Fire BBQ & Taco Catering" />
   <meta name="twitter:description" content="Veteran-owned live-fire BBQ & taco catering in Vacaville, CA, serving all of Northern California." />
   <meta name="twitter:image" content="https://roostersrollingbbq.com/assets/media/catering-1.jpg" />
-  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID to activate -->
+  <!-- Google tag (gtag.js) — GA4. MEASUREMENT ID lives here as a literal value.
+       To change it, find/replace G-GP4PMEYQV2 across every *.html file, e.g.:
+         grep -rl G-GP4PMEYQV2 *.html | xargs sed -i '' 's/G-GP4PMEYQV2/G-YOURID/g'
+       It must remain a literal <script> in <head> on every page (do NOT inject via
+       JS after load) so Google's tag detector / GA4 data-collection check sees it. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP4PMEYQV2"></script>
   <script>
-    window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-    if (window.GA_MEASUREMENT_ID && !/X{4}/.test(window.GA_MEASUREMENT_ID)) {
-      var gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
-      document.head.appendChild(gaScript);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { dataLayer.push(arguments); };
-      gtag('js', new Date());
-      gtag('config', window.GA_MEASUREMENT_ID);
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GP4PMEYQV2');
   </script>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="preload" href="assets/Tenaciou-HeavyOblique.woff2" as="font" type="font/woff2" crossorigin>

@@ -8,6 +8,18 @@
   <meta name="theme-color" content="#D5212A" />
   <link rel="icon" type="image/png" href="/assets/brand-rooster.png" />
   <link rel="apple-touch-icon" href="/assets/brand-rooster.png" />
+  <!-- Google tag (gtag.js) — GA4. MEASUREMENT ID lives here as a literal value.
+       To change it, find/replace G-GP4PMEYQV2 across every *.html file, e.g.:
+         grep -rl G-GP4PMEYQV2 *.html | xargs sed -i '' 's/G-GP4PMEYQV2/G-YOURID/g'
+       It must remain a literal <script> in <head> on every page (do NOT inject via
+       JS after load) so Google's tag detector / GA4 data-collection check sees it. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP4PMEYQV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GP4PMEYQV2');
+  </script>
   <link rel="stylesheet" href="/assets/styles.css" />
   <link rel="preload" href="/assets/Tenaciou-HeavyOblique.woff2" as="font" type="font/woff2" crossorigin>
   <style>
