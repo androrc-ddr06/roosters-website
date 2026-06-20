@@ -143,9 +143,20 @@
 
   <!-- HERO -->
   <section style="background-color:var(--brand-black);" class="relative text-white overflow-hidden">
-    <!-- Shuffling background slideshow (real catering photos) -->
-    <div id="heroBg" class="absolute inset-0"></div>
-    <!-- Dark overlay for text legibility -->
+    <!-- Background hero video (RRBBQ main vid). Poster paints instantly; the
+         video source is chosen by screen size in JS and skipped on reduced-motion
+         / Save-Data so the poster image alone is shown there. -->
+    <div id="heroBg" class="absolute inset-0">
+      <video
+        id="heroVideo"
+        class="absolute inset-0 w-full h-full object-cover"
+        poster="assets/media/hero-bbq-poster.jpg"
+        data-src-desktop="assets/media/hero-bbq.mp4"
+        data-src-mobile="assets/media/hero-bbq-mobile.mp4"
+        muted loop playsinline autoplay preload="none"
+        aria-hidden="true" tabindex="-1"></video>
+    </div>
+    <!-- Dark overlay for text legibility over the moving footage -->
     <div class="absolute inset-0" style="background-color:rgba(28,26,27,0.68);"></div>
     <div class="relative max-w-3xl mx-auto px-4 py-28 md:py-40 text-center">
       <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
@@ -531,55 +542,31 @@
       menuBtn.setAttribute('aria-expanded', String(!open));
     });
 
-    // Hero background — shuffled crossfading slideshow of real catering photos
+    // Hero background video (RRBBQ main vid) — chooses a phone-sized file on
+    // small screens, holds at the poster image for reduced-motion / Save-Data,
+    // and pauses when off-screen or the tab is hidden to save battery + data.
     (function () {
-      const imgs = [
-        'assets/media/serving-meat.jpg',
-        'assets/media/catering-1.jpg',
-        'assets/media/chicken-tray.jpg',
-        'assets/media/crew-1.jpg',
-        'assets/media/catering-2.jpg',
-        'assets/media/crew-2.jpg'
-      ];
-      // Fisher–Yates shuffle so the order differs each visit
-      for (let i = imgs.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+      const v = document.getElementById('heroVideo');
+      if (!v) return;
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const saveData = navigator.connection && navigator.connection.saveData;
+      // Opt-outs keep the poster frame only — no video download.
+      if (reduceMotion || saveData) return;
+      const isMobile = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+      v.src = (isMobile ? v.getAttribute('data-src-mobile') : v.getAttribute('data-src-desktop')) || v.getAttribute('data-src-desktop');
+      v.load();
+      const tryPlay = function () { const p = v.play(); if (p && p.catch) p.catch(function () {}); };
+      v.addEventListener('canplay', tryPlay, { once: true });
+      tryPlay();
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { tryPlay(); } else { v.pause(); } });
+        }, { threshold: 0.1 });
+        io.observe(v);
       }
-      const bg = document.getElementById('heroBg');
-      if (!bg) return;
-      const layers = [document.createElement('div'), document.createElement('div')];
-      layers.forEach((l) => {
-        l.style.position = 'absolute';
-        l.style.inset = '0';
-        l.style.backgroundSize = 'cover';
-        l.style.backgroundPosition = 'center';
-        l.style.transformOrigin = 'center';
-        l.style.opacity = '0';
-        l.style.willChange = 'opacity, transform';
-        bg.appendChild(l);
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) { v.pause(); } else { tryPlay(); }
       });
-      // Fade a layer in while slowly zooming out (Ken Burns effect)
-      function show(layer, src) {
-        layer.style.transition = 'none';
-        layer.style.transform = 'scale(1.1)';
-        layer.style.backgroundImage = "url('" + src + "')";
-        void layer.offsetWidth; // reflow so the reset lands before animating
-        layer.style.transition = 'opacity 1.4s ease-in-out, transform 7s ease-out';
-        layer.style.opacity = '1';
-        layer.style.transform = 'scale(1)';
-      }
-      let idx = 0, active = 0;
-      show(layers[0], imgs[0]);
-      if (imgs.length > 1) {
-        setInterval(function () {
-          idx = (idx + 1) % imgs.length;
-          const next = (active + 1) % 2;
-          show(layers[next], imgs[idx]);
-          layers[active].style.opacity = '0';
-          active = next;
-        }, 5500);
-      }
     })();
 
     // Play the reel video only when it scrolls into view (defers the ~4MB download)
