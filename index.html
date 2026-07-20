@@ -159,8 +159,13 @@
     <!-- Dark overlay for text legibility over the moving footage -->
     <div class="absolute inset-0" style="background-color:rgba(28,26,27,0.68);"></div>
     <div class="relative max-w-3xl mx-auto px-4 py-28 md:py-40 text-center">
-      <div class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:var(--brand-red);">
-        Veteran-Owned · Northern California
+      <div class="flex flex-wrap gap-2 justify-center mb-4">
+        <span class="inline-block text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase" style="background-color:var(--brand-red);">
+          Veteran-Owned · Northern California
+        </span>
+        <span class="inline-flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase" style="background-color:#d4af37;color:var(--brand-black);">
+          🏆 Best Caterer 2025
+        </span>
       </div>
       <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
         Real BBQ.<br/>
@@ -201,6 +206,30 @@
           <div class="flex justify-center mb-3"><img src="assets/brand-chili.png" alt="We Come to You" class="w-16 h-16 object-contain" /></div>
           <h3 class="font-bold text-stone-800 mb-1">We Come to You</h3>
           <p class="text-sm text-stone-500">Serving all of Northern California</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARD — Best of BusinessRate 2025, Caterer -->
+  <section style="background-color:var(--brand-black);" class="py-16 relative overflow-hidden text-white">
+    <img src="assets/brand-pattern.png" alt="" aria-hidden="true" loading="lazy" class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style="opacity:0.04;" />
+    <div class="relative max-w-5xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <img
+          src="assets/media/award-best-caterer-2025.png"
+          alt="Best of BusinessRate 2025 Caterer award presented to Rooster's Rolling BBQ Catering, Vacaville, California"
+          width="600" height="904" loading="lazy"
+          class="w-40 md:w-52 h-auto flex-shrink-0" />
+        <div class="text-center md:text-left">
+          <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase" style="background-color:#d4af37;color:var(--brand-black);">
+            🏆 Award Winning
+          </div>
+          <h2 class="text-3xl md:text-4xl font-black mb-3">Voted Best Caterer of 2025</h2>
+          <p class="mb-6" style="color:rgba(255,255,255,0.75);max-width:34rem;">
+            Rooster's Rolling BBQ was named <strong class="text-white">Best of BusinessRate 2025 — Caterer</strong> for Vacaville and the greater Sacramento area — ranked on recent, real customer reviews.
+          </p>
+          <a href="book.html" class="btn-red text-white font-bold px-8 py-4 rounded-full text-lg inline-block">Book the Award-Winning Crew →</a>
         </div>
       </div>
     </div>
@@ -642,6 +671,7 @@
         "email": "rprado@roostersrollingbbq.com",
         "image": "https://roostersrollingbbq.com/assets/media/serving-meat.jpg",
         "logo": "https://roostersrollingbbq.com/assets/logo-logotype-white.png",
+        "award": "Best of BusinessRate 2025 — Caterer (Vacaville, CA)",
         "priceRange": "$$",
         "servesCuisine": ["Barbecue", "Mexican", "Tacos"],
         "address": {
